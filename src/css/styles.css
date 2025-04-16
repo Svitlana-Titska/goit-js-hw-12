@@ -1,61 +1,115 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
 
 body {
-  font-family: Arial, sans-serif;
-}
-
-header {
-  margin: 20px;
-}
-
-.search-form {
-  display: flex;
-  gap: 10px;
-  text-align: center;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 10px;
+  font-family: sans-serif;
+  margin: 0;
   padding: 20px;
+  background-color: #f0f0f0;
 }
 
-.gallery a {
-  display: block;
-  border: 2px solid #ccc;
+.form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.gallery img {
-  width: 100%;
-  height: auto;
+input[type='text'] {
+  padding: 8px;
+  font-size: 16px;
+  width: 250px;
+  margin-right: 8px;
 }
 
-.loader {
-  display: none;
-}
-
-.loader.visible {
-  display: block;
-}
-
-.load-more {
-  margin: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+button {
+  padding: 8px 16px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.load-more.hidden {
-  display: none;
+.load-more {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #e0e0e0;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.load-more:hover {
+  background-color: #e0e0e0;
+}
+
+.loader {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item a {
+  display: block;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-info {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 12px;
+  background-color: #f5f5f5;
+  color: #333;
+  gap: 10px;
+}
+
+.image-info > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-info .label {
+  font-weight: 500;
+}
+
+.image-info .value {
+  font-weight: bold;
 }
